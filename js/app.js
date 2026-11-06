@@ -1141,10 +1141,10 @@
       teacherBtn.addEventListener('click', () => {
         if (global.SoundFX) global.SoundFX.playClick();
         if (!state.teacherMode) {
-          const pin = window.prompt('🔒 Acceso exclusivo para el Profesor.\nIntroduce la clave para desbloquear todos los mundos (clave: 1234 o unizar):');
+          const pin = window.prompt('🔒 Acceso exclusivo para el Profesor.\nIntroduce el código PIN de acceso:');
           if (pin === null) return; // Pulsó cancelar
-          const cleanPin = pin.trim().toLowerCase();
-          if (cleanPin === '1234' || cleanPin === 'unizar') {
+          const cleanPin = pin.trim();
+          if (cleanPin === '2486') {
             state.teacherMode = true;
             saveState();
             if (global.SoundFX) global.SoundFX.playSuccess();
